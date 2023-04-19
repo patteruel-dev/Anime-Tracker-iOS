@@ -10,12 +10,12 @@
 		43A9EEA129EFFF9300C5733F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA029EFFF9300C5733F /* AppDelegate.swift */; };
 		43A9EEA329EFFF9300C5733F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA229EFFF9300C5733F /* SceneDelegate.swift */; };
 		43A9EEA529EFFF9300C5733F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA429EFFF9300C5733F /* ViewController.swift */; };
-		43A9EEA829EFFF9300C5733F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A9EEA629EFFF9300C5733F /* Main.storyboard */; };
 		43A9EEAA29EFFF9400C5733F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A9EEA929EFFF9400C5733F /* Assets.xcassets */; };
 		43A9EEAD29EFFF9400C5733F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A9EEAB29EFFF9400C5733F /* LaunchScreen.storyboard */; };
 		43A9EEB829EFFF9500C5733F /* Anime_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEB729EFFF9500C5733F /* Anime_TrackerTests.swift */; };
 		43A9EEC229EFFF9500C5733F /* Anime_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEC129EFFF9500C5733F /* Anime_TrackerUITests.swift */; };
 		43A9EEC429EFFF9500C5733F /* Anime_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEC329EFFF9500C5733F /* Anime_TrackerUITestsLaunchTests.swift */; };
+		43FE307529F008D20026A5ED /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE307429F008D20026A5ED /* AppCoordinator.swift */; };
 		684B95B30426D912C0C01E5D /* Pods_Anime_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F68FF131B5D32E073FD81D3B /* Pods_Anime_TrackerTests.framework */; };
 		6ED429F7BAAB0061DE106AD3 /* Pods_Anime_Tracker_Anime_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3B0DBC8C8475665714A4C5 /* Pods_Anime_Tracker_Anime_TrackerUITests.framework */; };
 		ED38A7C4C5E0F4EF764BA77F /* Pods_Anime_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDE20038B10BF5D6A249AA3 /* Pods_Anime_Tracker.framework */; };
@@ -46,7 +46,6 @@
 		43A9EEA029EFFF9300C5733F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A9EEA229EFFF9300C5733F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		43A9EEA429EFFF9300C5733F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		43A9EEA729EFFF9300C5733F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43A9EEA929EFFF9400C5733F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A9EEAC29EFFF9400C5733F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A9EEAE29EFFF9400C5733F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		43A9EEBD29EFFF9500C5733F /* Anime TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Anime TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A9EEC129EFFF9500C5733F /* Anime_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime_TrackerUITests.swift; sourceTree = "<group>"; };
 		43A9EEC329EFFF9500C5733F /* Anime_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anime_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		43FE307429F008D20026A5ED /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		47B9D039160F28F7C54B7327 /* Pods-Anime Tracker-Anime TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Tracker-Anime TrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Anime Tracker-Anime TrackerUITests/Pods-Anime Tracker-Anime TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C3B4F6E7314C38C9A522C07 /* Pods-Anime Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Anime Tracker/Pods-Anime Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		BBDE20038B10BF5D6A249AA3 /* Pods_Anime_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anime_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,8 +118,8 @@
 			children = (
 				43A9EEA029EFFF9300C5733F /* AppDelegate.swift */,
 				43A9EEA229EFFF9300C5733F /* SceneDelegate.swift */,
+				43FE307429F008D20026A5ED /* AppCoordinator.swift */,
 				43A9EEA429EFFF9300C5733F /* ViewController.swift */,
-				43A9EEA629EFFF9300C5733F /* Main.storyboard */,
 				43A9EEA929EFFF9400C5733F /* Assets.xcassets */,
 				43A9EEAB29EFFF9400C5733F /* LaunchScreen.storyboard */,
 				43A9EEAE29EFFF9400C5733F /* Info.plist */,
@@ -278,7 +278,6 @@
 			files = (
 				43A9EEAD29EFFF9400C5733F /* LaunchScreen.storyboard in Resources */,
 				43A9EEAA29EFFF9400C5733F /* Assets.xcassets in Resources */,
-				43A9EEA829EFFF9300C5733F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43FE307529F008D20026A5ED /* AppCoordinator.swift in Sources */,
 				43A9EEA529EFFF9300C5733F /* ViewController.swift in Sources */,
 				43A9EEA129EFFF9300C5733F /* AppDelegate.swift in Sources */,
 				43A9EEA329EFFF9300C5733F /* SceneDelegate.swift in Sources */,
@@ -445,14 +445,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		43A9EEA629EFFF9300C5733F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43A9EEA729EFFF9300C5733F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		43A9EEAB29EFFF9400C5733F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -591,7 +583,7 @@
 				INFOPLIST_FILE = "Anime Tracker/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -621,7 +613,7 @@
 				INFOPLIST_FILE = "Anime Tracker/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
