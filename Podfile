@@ -6,6 +6,7 @@ target 'Anime Tracker' do
   use_frameworks!
 
   # Pods for Anime Tracker
+  pod 'LoginFeature', :path => 'Development Pods/LoginFeature'
 
   target 'Anime TrackerTests' do
     inherit! :search_paths

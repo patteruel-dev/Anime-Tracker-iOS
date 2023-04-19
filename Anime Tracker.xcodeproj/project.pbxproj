@@ -178,6 +178,7 @@
 				43A9EE9929EFFF9300C5733F /* Sources */,
 				43A9EE9A29EFFF9300C5733F /* Frameworks */,
 				43A9EE9B29EFFF9300C5733F /* Resources */,
+				966DEAB27EF58BBFE8740302 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +216,7 @@
 				43A9EEB929EFFF9500C5733F /* Sources */,
 				43A9EEBA29EFFF9500C5733F /* Frameworks */,
 				43A9EEBB29EFFF9500C5733F /* Resources */,
+				B6C3E90E7BA2438174148FA3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,6 +341,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		966DEAB27EF58BBFE8740302 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anime Tracker/Pods-Anime Tracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anime Tracker/Pods-Anime Tracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anime Tracker/Pods-Anime Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6C3E90E7BA2438174148FA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anime Tracker-Anime TrackerUITests/Pods-Anime Tracker-Anime TrackerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Anime Tracker-Anime TrackerUITests/Pods-Anime Tracker-Anime TrackerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Anime Tracker-Anime TrackerUITests/Pods-Anime Tracker-Anime TrackerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D074E2FEBD33892EB29F5B66 /* [CP] Check Pods Manifest.lock */ = {
@@ -606,7 +642,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE3BBEA825D6C7FA190D7281 /* Pods-Anime TrackerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -627,7 +663,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 076381D522C97E5996B5A3D5 /* Pods-Anime TrackerTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -648,7 +684,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47B9D039160F28F7C54B7327 /* Pods-Anime Tracker-Anime TrackerUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2ZL598ZSDC;
@@ -667,7 +703,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A071DE83881D8112819BB03 /* Pods-Anime Tracker-Anime TrackerUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2ZL598ZSDC;
