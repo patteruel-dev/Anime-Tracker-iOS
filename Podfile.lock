@@ -1,0 +1,16 @@
+PODS:
+  - LoginFeature (0.1.0)
+
+DEPENDENCIES:
+  - LoginFeature (from `Development Pods/LoginFeature`)
+
+EXTERNAL SOURCES:
+  LoginFeature:
+    :path: Development Pods/LoginFeature
+
+SPEC CHECKSUMS:
+  LoginFeature: fd33d1596c02214493a9eaa68876bfe4822e16b0
+
+PODFILE CHECKSUM: 4d75c4bf151881457771a5f910518b74b0f6c090
+
+COCOAPODS: 1.11.3
