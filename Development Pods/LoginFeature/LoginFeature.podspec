@@ -32,9 +32,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'LoginFeature/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'LoginFeature' => ['LoginFeature/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'LoginFeature' => ['LoginFeature/Resources/**/*.{xib,storyboard,xcassets}']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
