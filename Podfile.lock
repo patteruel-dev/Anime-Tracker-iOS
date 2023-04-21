@@ -1,16 +1,47 @@
 PODS:
-  - LoginFeature (0.1.0)
+  - Alamofire (5.6.4)
+  - CoreLib (0.1.0)
+  - LoginFeature (0.1.0):
+    - LoginService
+  - LoginService (0.1.0):
+    - MALSwift
+  - MALSwift (0.1.0):
+    - CoreLib
+    - Moya
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
 
 DEPENDENCIES:
+  - CoreLib (from `Development Pods/CoreLib`)
   - LoginFeature (from `Development Pods/LoginFeature`)
+  - LoginService (from `Development Pods/LoginService`)
+  - MALSwift (from `Development Pods/MALSwift`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
 
 EXTERNAL SOURCES:
+  CoreLib:
+    :path: Development Pods/CoreLib
   LoginFeature:
     :path: Development Pods/LoginFeature
+  LoginService:
+    :path: Development Pods/LoginService
+  MALSwift:
+    :path: Development Pods/MALSwift
 
 SPEC CHECKSUMS:
-  LoginFeature: fd33d1596c02214493a9eaa68876bfe4822e16b0
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  CoreLib: 71abdfe73b04663a14471bb94660774ec6fddaa5
+  LoginFeature: e1c5b5407c27479b3ccd8af2fc27498c927b1415
+  LoginService: 3dc3351b22bf5ab0f28e93807f8974c6dee33808
+  MALSwift: 0e39c302c2366fbbae9f1ebd8a0542a9f83fb2d6
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
 
-PODFILE CHECKSUM: 4d75c4bf151881457771a5f910518b74b0f6c090
+PODFILE CHECKSUM: d4d79a6b2b2e68ecd1b0033b8beddf8d42994c9c
 
 COCOAPODS: 1.11.3

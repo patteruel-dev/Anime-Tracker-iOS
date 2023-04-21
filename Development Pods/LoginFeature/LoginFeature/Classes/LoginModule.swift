@@ -6,13 +6,23 @@
 //
 
 import Foundation
+import MALSwift
+
+public protocol LoginFlowDelegate {
+}
 
 public class LoginModule {
-    public init() {}
+    let moduleData: LoginModuleData
+    
+    public init(delegate: LoginFlowDelegate, malService: MALService) {
+        moduleData = LoginModuleData(delegate: delegate, malService: malService)
+    }
     
     private func getLoginViewController() -> LoginViewController {
         let storyboard = UIStoryboard(name: "Login", bundle: resourceBundle)
         let loginViewController = storyboard.instantiateInitialViewController() as! LoginViewController
+        var loginDS = loginViewController.router?.dataStore
+        loginDS?.moduleData = moduleData
         return loginViewController
     }
     
@@ -38,4 +48,9 @@ public class LoginModule {
 
         return resourceBundle
     }()
+}
+
+struct LoginModuleData {
+    let delegate: LoginFlowDelegate
+    let malService: MALService
 }

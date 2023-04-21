@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4394654F29F33BFE00A3432D /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4394654E29F33BFE00A3432D /* LoginCoordinator.swift */; };
 		43A9EEA129EFFF9300C5733F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA029EFFF9300C5733F /* AppDelegate.swift */; };
 		43A9EEA329EFFF9300C5733F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA229EFFF9300C5733F /* SceneDelegate.swift */; };
 		43A9EEA529EFFF9300C5733F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA429EFFF9300C5733F /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		076381D522C97E5996B5A3D5 /* Pods-Anime TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-Anime TrackerTests/Pods-Anime TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A071DE83881D8112819BB03 /* Pods-Anime Tracker-Anime TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Tracker-Anime TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Anime Tracker-Anime TrackerUITests/Pods-Anime Tracker-Anime TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A3B0DBC8C8475665714A4C5 /* Pods_Anime_Tracker_Anime_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anime_Tracker_Anime_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4394654E29F33BFE00A3432D /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		43A9EE9D29EFFF9300C5733F /* Anime Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anime Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A9EEA029EFFF9300C5733F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A9EEA229EFFF9300C5733F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4394654D29F33BEF00A3432D /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				43FE307429F008D20026A5ED /* AppCoordinator.swift */,
+				4394654E29F33BFE00A3432D /* LoginCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		43A9EE9429EFFF9300C5733F = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +127,9 @@
 		43A9EE9F29EFFF9300C5733F /* Anime Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				4394654D29F33BEF00A3432D /* Coordinators */,
 				43A9EEA029EFFF9300C5733F /* AppDelegate.swift */,
 				43A9EEA229EFFF9300C5733F /* SceneDelegate.swift */,
-				43FE307429F008D20026A5ED /* AppCoordinator.swift */,
 				43A9EEA429EFFF9300C5733F /* ViewController.swift */,
 				43A9EEA929EFFF9400C5733F /* Assets.xcassets */,
 				43A9EEAB29EFFF9400C5733F /* LaunchScreen.storyboard */,
@@ -252,7 +263,7 @@
 				};
 			};
 			buildConfigurationList = 43A9EE9829EFFF9300C5733F /* Build configuration list for PBXProject "Anime Tracker" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -407,6 +418,7 @@
 			files = (
 				43FE307529F008D20026A5ED /* AppCoordinator.swift in Sources */,
 				43A9EEA529EFFF9300C5733F /* ViewController.swift in Sources */,
+				4394654F29F33BFE00A3432D /* LoginCoordinator.swift in Sources */,
 				43A9EEA129EFFF9300C5733F /* AppDelegate.swift in Sources */,
 				43A9EEA329EFFF9300C5733F /* SceneDelegate.swift in Sources */,
 			);
