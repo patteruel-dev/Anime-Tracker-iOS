@@ -14,7 +14,7 @@ import UIKit
 
 protocol LoginDisplayLogic: class
 {
-    func displaySomething(viewModel: Login.Something.ViewModel)
+    func displayAuthorizationWebView(viewModel: Login.Authorize.ViewModel)
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -69,24 +69,22 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        doSomething()
+        
     }
     
     @IBAction func didTapAuthorizeButton(_ sender: UIButton) {
-        interactor?.authorizeUser()
-    }
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething()
-    {
-        let request = Login.Something.Request()
-        interactor?.doSomething(request: request)
+        authorizeUser()
     }
     
-    func displaySomething(viewModel: Login.Something.ViewModel)
+    // MARK: Authorize
+    
+    func authorizeUser()
     {
-        //nameTextField.text = viewModel.name
+        let request = Login.Authorize.Request()
+        interactor?.authorize(request: request)
+    }
+    
+    func displayAuthorizationWebView(viewModel: Login.Authorize.ViewModel) {
+        router?.routeToAuthorizationWebView(url: viewModel.oauthURL)
     }
 }

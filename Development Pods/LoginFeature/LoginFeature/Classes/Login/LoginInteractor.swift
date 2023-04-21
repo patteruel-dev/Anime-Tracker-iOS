@@ -14,8 +14,7 @@ import UIKit
 
 protocol LoginBusinessLogic
 {
-    func doSomething(request: Login.Something.Request)
-    func authorizeUser()
+    func authorize(request: Login.Authorize.Request)
 }
 
 protocol LoginDataStore
@@ -32,17 +31,9 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     
     // MARK: Do something
     
-    func doSomething(request: Login.Something.Request)
-    {
-        worker = LoginWorker()
-        worker?.doSomeWork()
-        
-        let response = Login.Something.Response()
-        presenter?.presentSomething(response: response)
-    }
-    
-    func authorizeUser() {
+    func authorize(request: Login.Authorize.Request) {
         let url = moduleData.malService.oauth2URL()
         print("Oauth2 URL: \(url.absoluteString)")
+        presenter?.presentAuthorizationWebView(response: .init(oauthURL: url))
     }
 }
