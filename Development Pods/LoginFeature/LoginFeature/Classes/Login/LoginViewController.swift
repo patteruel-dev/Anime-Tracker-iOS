@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import WebKit
 
 protocol LoginDisplayLogic: class
 {
@@ -86,5 +87,37 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     func displayAuthorizationWebView(viewModel: Login.Authorize.ViewModel) {
         router?.routeToAuthorizationWebView(url: viewModel.oauthURL)
+    }
+}
+
+extension LoginViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("didStartProvisionalNavigation")
+    }
+    
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        print("didReceiveServerRedirectForProvisionalNavigation")
+        print("URL: \(webView.url?.absoluteString)")
+        print("URL Components: \(webView.url?.pathComponents)")
+        print("URL Query: \(webView.url?.query)")
+    }
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        print("didCommit")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("didFinish")
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("didFail")
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print("didFailProvisionalNavigation")
+    }
+    
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        print("webViewWebContentProcessDidTerminate")
     }
 }

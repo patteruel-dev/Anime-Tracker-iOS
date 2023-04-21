@@ -36,5 +36,6 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
         webViewController.view = webView
         viewController?.present(webViewController, animated: true)
         webView.load(URLRequest(url: url))
+        webView.navigationDelegate = viewController
     }
 }
