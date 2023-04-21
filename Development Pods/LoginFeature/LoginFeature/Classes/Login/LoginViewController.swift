@@ -97,9 +97,7 @@ extension LoginViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         print("didReceiveServerRedirectForProvisionalNavigation")
-        print("URL: \(webView.url?.absoluteString)")
-        print("URL Components: \(webView.url?.pathComponents)")
-        print("URL Query: \(webView.url?.query)")
+        print("URL: \(String(describing: webView.url?.absoluteString))")
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         print("didCommit")
