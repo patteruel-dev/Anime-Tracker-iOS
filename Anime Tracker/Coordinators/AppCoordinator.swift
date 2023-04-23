@@ -9,15 +9,15 @@ import Foundation
 import LoginFeature
 import LandingFeature
 import LoginService
-import MALSwift
+import AniListSwift
 
 class AppCoordinator {
     var window: UIWindow
     var rootNavigationController: UINavigationController
     
     // MARK: Services
-    lazy var malService = MALService()
-    lazy var loginService = LoginService(malService: malService)
+    lazy var anilistService = AniListService()
+    lazy var loginService = LoginService(anilistService: anilistService)
     
     // MARK: Modules
     lazy var loginModule = LoginModule(delegate: self, loginService: loginService)
