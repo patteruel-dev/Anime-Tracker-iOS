@@ -9,10 +9,10 @@ import Foundation
 import Moya
 
 enum MALAPI: TargetType {
-    case anime(bearerToken: String)
-    case animeDetails(animeId: String, bearerToken: String)
-    case seasonalAnime(year: Int, season: String, bearerToken: String)
-    case userAnimeList(userName: String, bearerToken: String)
+    case anime(authorization: String)
+    case animeDetails(animeId: String, authorization: String)
+    case seasonalAnime(year: Int, season: String, authorization: String)
+    case userAnimeList(userName: String, authorization: String)
 }
 
 extension MALAPI {
@@ -32,18 +32,26 @@ extension MALAPI {
         }
     }
     var method: Moya.Method {
-        .get
+        switch self {
+        default:
+            return .get
+        }
     }
     var task: Moya.Task {
-        .requestPlain
+        switch self {
+        default:
+            return .requestPlain
+        }
     }
     var headers: [String : String]? {
         switch self {
-        case .anime(bearerToken: let bearerToken),
-                .animeDetails(animeId: _, bearerToken: let bearerToken),
-                .seasonalAnime(year: _, season: _, bearerToken: let bearerToken),
-                .userAnimeList(userName: _, bearerToken: let bearerToken):
-            return ["Authorization": "Bearer \(bearerToken)"]
+        case .anime(authorization: let authorization),
+                .animeDetails(animeId: _, authorization: let authorization),
+                .seasonalAnime(year: _, season: _, authorization: let authorization),
+                .userAnimeList(userName: _, authorization: let authorization):
+            return ["Authorization": authorization]
+        default:
+            return nil
         }
     }
 }

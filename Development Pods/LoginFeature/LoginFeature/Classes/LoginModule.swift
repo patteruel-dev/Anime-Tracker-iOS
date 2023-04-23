@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import MALSwift
+import LoginService
 
 public protocol LoginFlowDelegate {
 }
@@ -14,8 +14,8 @@ public protocol LoginFlowDelegate {
 public class LoginModule {
     let moduleData: LoginModuleData
     
-    public init(delegate: LoginFlowDelegate, malService: MALService) {
-        moduleData = LoginModuleData(delegate: delegate, malService: malService)
+    public init(delegate: LoginFlowDelegate, loginService: LoginService) {
+        moduleData = LoginModuleData(delegate: delegate, loginService: loginService)
     }
     
     private func getLoginViewController() -> LoginViewController {
@@ -52,5 +52,5 @@ public class LoginModule {
 
 struct LoginModuleData {
     let delegate: LoginFlowDelegate
-    let malService: MALService
+    let loginService: LoginService
 }

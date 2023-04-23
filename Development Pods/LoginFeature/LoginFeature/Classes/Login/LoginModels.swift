@@ -16,7 +16,7 @@ enum Login
 {
     // MARK: Use cases
     
-    enum Authorize
+    enum Authorization
     {
         struct Request
         {
@@ -28,6 +28,23 @@ enum Login
         struct ViewModel
         {
             let oauthURL: URL
+        }
+    }
+    
+    enum Redirect
+    {
+        struct Request
+        {
+            let url: URL?
+        }
+        
+        struct Response
+        {
+            
+        }
+        struct ViewModel
+        {
+            
         }
     }
 }

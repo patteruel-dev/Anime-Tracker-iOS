@@ -16,6 +16,7 @@ import WebKit
 @objc protocol LoginRoutingLogic
 {
     func routeToAuthorizationWebView(url: URL)
+    func dismissWebViewController()
 }
 
 protocol LoginDataPassing
@@ -28,14 +29,20 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
     weak var viewController: LoginViewController?
     var dataStore: LoginDataStore?
     
+    private var webViewController: UIViewController?
+    
     // MARK: Routing
     
     func routeToAuthorizationWebView(url: URL) {
         let webView = WKWebView()
-        let webViewController = UIViewController()
-        webViewController.view = webView
-        viewController?.present(webViewController, animated: true)
+        webViewController = UIViewController()
+        webViewController?.view = webView
+        viewController?.present(webViewController!, animated: true)
         webView.load(URLRequest(url: url))
         webView.navigationDelegate = viewController
+    }
+    
+    func dismissWebViewController() {
+        webViewController?.dismiss(animated: true)
     }
 }

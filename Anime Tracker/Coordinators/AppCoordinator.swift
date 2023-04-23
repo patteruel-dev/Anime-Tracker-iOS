@@ -7,6 +7,7 @@
 
 import Foundation
 import LoginFeature
+import LoginService
 import MALSwift
 
 class AppCoordinator {
@@ -14,9 +15,10 @@ class AppCoordinator {
     
     // MARK: Services
     lazy var malService = MALService()
+    lazy var loginService = LoginService(malService: malService)
     
     // MARK: Modules
-    lazy var loginModule = LoginModule(delegate: self, malService: malService)
+    lazy var loginModule = LoginModule(delegate: self, loginService: loginService)
     
     
     init(window: UIWindow) {
