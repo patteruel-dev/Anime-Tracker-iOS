@@ -14,18 +14,20 @@ import UIKit
 
 enum Login
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
+    // MARK: Use cases
+    
+    enum Authorize
     {
+        struct Request
+        {
+        }
+        struct Response
+        {
+            let oauthURL: URL
+        }
+        struct ViewModel
+        {
+            let oauthURL: URL
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

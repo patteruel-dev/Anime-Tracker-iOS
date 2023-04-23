@@ -6,7 +6,10 @@ target 'Anime Tracker' do
   use_frameworks!
 
   # Pods for Anime Tracker
+  pod 'CoreLib', :path => 'Development Pods/CoreLib'
   pod 'LoginFeature', :path => 'Development Pods/LoginFeature'
+  pod 'LoginService', :path => 'Development Pods/LoginService'
+  pod 'MALSwift', :path => 'Development Pods/MALSwift'
 
   target 'Anime TrackerTests' do
     inherit! :search_paths
