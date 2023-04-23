@@ -40,7 +40,6 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     
     func handleRedirect(request: Login.Redirect.Request) {
         guard let response = moduleData.loginService.parseUrl(request.url) else {
-            print("Unable to parse URL: \(request.url?.absoluteString)")
             return
         }
         presenter?.presentHUD()
@@ -51,8 +50,9 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
             do {
                 try await moduleData.loginService.authorizeUser(oauthResponse: response)
                 // if success, will proceed to the landing screen
-                print("Succesfully logged in!")
-                presenter?.presentAlert(title: "Success", message: "Logged in!")
+                DispatchQueue.main.async {
+                    self.moduleData.delegate.navigateToLandingScreen()
+                }
             } catch {
                 presenter?.presentAlert(title: "Error", message: error.localizedDescription)
             }

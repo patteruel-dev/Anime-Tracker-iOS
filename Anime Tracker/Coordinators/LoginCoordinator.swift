@@ -9,4 +9,7 @@ import Foundation
 import LoginFeature
 
 extension AppCoordinator: LoginFlowDelegate {
+    func navigateToLandingScreen() {
+        landingModule.startLandingFlow(in: rootNavigationController)
+    }
 }

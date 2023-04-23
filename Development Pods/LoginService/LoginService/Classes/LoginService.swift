@@ -26,13 +26,11 @@ public class LoginService {
         guard let url = url,
               url.absoluteString.contains(redirectURI),
               let components = URLComponents(string: url.absoluteString) else {
-            print("A")
             return nil
         }
         // attempt to extract code and state from the url components
         guard let code = components.queryItems?.first(where: { $0.name == "code"})?.value,
               let state = components.queryItems?.first(where: { $0.name == "state"})?.value else {
-            print("B")
             return nil
         }
         return Oauth2Response(code: code, state: state)

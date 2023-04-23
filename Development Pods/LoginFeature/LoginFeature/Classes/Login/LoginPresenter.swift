@@ -46,5 +46,4 @@ class LoginPresenter: LoginPresentationLogic
     func dismissHUD() {
         viewController?.dismissHUD()
     }
-    
 }

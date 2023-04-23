@@ -7,8 +7,10 @@
 
 import Foundation
 import LoginService
+import CoreLib
 
 public protocol LoginFlowDelegate {
+    func navigateToLandingScreen()
 }
 
 public class LoginModule {
@@ -17,6 +19,8 @@ public class LoginModule {
     public init(delegate: LoginFlowDelegate, loginService: LoginService) {
         moduleData = LoginModuleData(delegate: delegate, loginService: loginService)
     }
+    
+    private let resourceBundle: Bundle = Bundle.resourceBundle(for: LoginModule.self, resource: "LoginFeature")
     
     private func getLoginViewController() -> LoginViewController {
         let storyboard = UIStoryboard(name: "Login", bundle: resourceBundle)
@@ -36,18 +40,6 @@ public class LoginModule {
 //        navigationController.pushViewController(getSplashScreenViewController(), animated: false)
         navigationController.pushViewController(getLoginViewController(), animated: false)
     }
-    
-    private let resourceBundle: Bundle = {
-        let myBundle = Bundle(for: LoginModule.self)
-        guard let resourceBundleURL = myBundle.url(
-            forResource: "LoginFeature", withExtension: "bundle")
-            else { fatalError("LoginFeature.bundle not found!") }
-
-        guard let resourceBundle = Bundle(url: resourceBundleURL)
-            else { fatalError("Cannot access LoginFeature.bundle!") }
-
-        return resourceBundle
-    }()
 }
 
 struct LoginModuleData {
