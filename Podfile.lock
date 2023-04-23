@@ -1,7 +1,6 @@
 PODS:
   - Alamofire (5.6.4)
-  - AniListSwift (0.1.0):
-    - CoreLib
+  - AniListKtModule (1.0)
   - CoreLib (0.1.0):
     - Moya
     - ProgressHUD
@@ -10,7 +9,8 @@ PODS:
   - LoginFeature (0.1.0):
     - LoginService
   - LoginService (0.1.0):
-    - AniListSwift
+    - AniListKtModule
+    - CoreLib
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -18,7 +18,7 @@ PODS:
   - ProgressHUD (13.6.2)
 
 DEPENDENCIES:
-  - AniListSwift (from `Development Pods/AniListSwift`)
+  - AniListKtModule (from `KtLibraries/AniListKt/AniListKtModule`)
   - CoreLib (from `Development Pods/CoreLib`)
   - LandingFeature (from `Development Pods/LandingFeature`)
   - LoginFeature (from `Development Pods/LoginFeature`)
@@ -31,8 +31,8 @@ SPEC REPOS:
     - ProgressHUD
 
 EXTERNAL SOURCES:
-  AniListSwift:
-    :path: Development Pods/AniListSwift
+  AniListKtModule:
+    :path: KtLibraries/AniListKt/AniListKtModule
   CoreLib:
     :path: Development Pods/CoreLib
   LandingFeature:
@@ -44,14 +44,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  AniListSwift: 32ea7ed7ce9e10334fcff12bb563f5165df5bbb1
+  AniListKtModule: 1f8da1ceafbf457898f02a062f7556923a0c69cc
   CoreLib: dd69187b33b0837293c7b2a4c691780314d9a5d9
   LandingFeature: 1a31af39bf65fac7148bcc26da4cff1a3c52cdf5
   LoginFeature: e1c5b5407c27479b3ccd8af2fc27498c927b1415
-  LoginService: 4d988048b468df3e4acae019195be8cc42fe6822
+  LoginService: 6ae797e78e87f5d91c5a4bf754aae565b56f4315
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   ProgressHUD: 355915c8f033e626788fa9b0d99d06e8691595ab
 
-PODFILE CHECKSUM: 5f745757e58b68d5b5019f65043fcdbd464cb78a
+PODFILE CHECKSUM: 858532920e5990cf9fdbe3d9c0a5b6ecbffa28bd
 
 COCOAPODS: 1.11.3

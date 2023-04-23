@@ -39,7 +39,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     }
     
     func handleRedirect(request: Login.Redirect.Request) {
-        guard let response = moduleData.loginService.parseUrl(request.url) else {
+        guard let token = moduleData.loginService.parseToken(from: request.url) else {
             return
         }
         presenter?.presentHUD()
@@ -48,7 +48,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         // start processing
         Task {
             do {
-                try await moduleData.loginService.authorizeUser(oauthResponse: response)
+                try await moduleData.loginService.authorizeUser(token: token)
                 // if success, will proceed to the landing screen
                 DispatchQueue.main.async {
                     self.moduleData.delegate.navigateToLandingScreen()
