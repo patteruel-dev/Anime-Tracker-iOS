@@ -9,7 +9,7 @@ target 'Anime Tracker' do
   pod 'CoreLib', :path => 'Development Pods/CoreLib'
   pod 'LoginFeature', :path => 'Development Pods/LoginFeature'
   pod 'LoginService', :path => 'Development Pods/LoginService'
-  pod 'MALSwift', :path => 'Development Pods/MALSwift'
+  pod 'AniListSwift', :path => 'Development Pods/AniListSwift'
   pod 'LandingFeature', :path => 'Development Pods/LandingFeature'
   
   target 'Anime TrackerTests' do
