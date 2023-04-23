@@ -10,7 +10,8 @@ target 'Anime Tracker' do
   pod 'LoginFeature', :path => 'Development Pods/LoginFeature'
   pod 'LoginService', :path => 'Development Pods/LoginService'
   pod 'MALSwift', :path => 'Development Pods/MALSwift'
-
+  pod 'LandingFeature', :path => 'Development Pods/LandingFeature'
+  
   target 'Anime TrackerTests' do
     inherit! :search_paths
     # Pods for testing
@@ -23,12 +24,6 @@ target 'Anime Tracker' do
   # disable code signing
   post_install do |installer|
     installer.pods_project.targets.each do |target|
-      if ['AcuantiOSSDKV11', 'KeychainAccess', 'Socket.IO-Client-Swift', 'Starscream', 'SwiftyJSON'].include? target.name
-        target.build_configurations.each do |config|
-          config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-        end
-      end
-      
       if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
         target.build_configurations.each do |config|
           config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'

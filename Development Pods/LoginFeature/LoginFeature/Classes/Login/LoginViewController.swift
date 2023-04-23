@@ -12,10 +12,12 @@
 
 import UIKit
 import WebKit
+import CoreLib
 
-protocol LoginDisplayLogic: class
+protocol LoginDisplayLogic: AnyObject, CanDisplayAlert, CanDisplayHUD
 {
-    func displayAuthorizationWebView(viewModel: Login.Authorize.ViewModel)
+    func displayAuthorizationWebView(viewModel: Login.Authorization.ViewModel)
+    func dismissWebView()
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -81,12 +83,16 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     func authorizeUser()
     {
-        let request = Login.Authorize.Request()
-        interactor?.authorize(request: request)
+        let request = Login.Authorization.Request()
+        interactor?.requestAuthorization(request: request)
     }
     
-    func displayAuthorizationWebView(viewModel: Login.Authorize.ViewModel) {
+    func displayAuthorizationWebView(viewModel: Login.Authorization.ViewModel) {
         router?.routeToAuthorizationWebView(url: viewModel.oauthURL)
+    }
+    
+    func dismissWebView() {
+        router?.dismissWebViewController()
     }
 }
 
@@ -98,6 +104,8 @@ extension LoginViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         print("didReceiveServerRedirectForProvisionalNavigation")
         print("URL: \(String(describing: webView.url?.absoluteString))")
+        interactor?.handleRedirect(request: .init(url: webView.url))
+        
     }
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         print("didCommit")

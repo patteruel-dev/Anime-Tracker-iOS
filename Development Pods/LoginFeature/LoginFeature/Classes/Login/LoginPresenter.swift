@@ -11,10 +11,12 @@
 //
 
 import UIKit
+import CoreLib
 
-protocol LoginPresentationLogic
+protocol LoginPresentationLogic: CanPresentAlert, CanPresentHUD
 {
-    func presentAuthorizationWebView(response: Login.Authorize.Response)
+    func presentAuthorizationWebView(response: Login.Authorization.Response)
+    func dismissWebView()
 }
 
 class LoginPresenter: LoginPresentationLogic
@@ -23,9 +25,25 @@ class LoginPresenter: LoginPresentationLogic
     
     // MARK: Do something
     
-    func presentAuthorizationWebView(response: Login.Authorize.Response)
+    func presentAuthorizationWebView(response: Login.Authorization.Response)
     {
-        let viewModel = Login.Authorize.ViewModel(oauthURL: response.oauthURL)
+        let viewModel = Login.Authorization.ViewModel(oauthURL: response.oauthURL)
         viewController?.displayAuthorizationWebView(viewModel: viewModel)
+    }
+    
+    func dismissWebView() {
+        viewController?.dismissWebView()
+    }
+    
+    func presentAlert(title: String, message: String, buttonTitle: String) {
+        viewController?.displayAlert(title: title, message: message, actionTitle: buttonTitle)
+    }
+    
+    func presentHUD() {
+        viewController?.displayHUD()
+    }
+    
+    func dismissHUD() {
+        viewController?.dismissHUD()
     }
 }

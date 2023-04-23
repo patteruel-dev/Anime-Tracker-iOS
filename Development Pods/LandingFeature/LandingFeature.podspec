@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint CoreLib.podspec' to ensure this is a
+# Be sure to run `pod lib lint LandingFeature.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'CoreLib'
+  s.name             = 'LandingFeature'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CoreLib.'
+  s.summary          = 'A short description of LandingFeature.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,23 +21,26 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/jteruel-phdlabs/CoreLib'
+  s.homepage         = 'https://github.com/patteruel-dev/LandingFeature'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'jteruel-phdlabs' => 'jpteruel95@gmail.com' }
-  s.source           = { :git => 'https://github.com/jteruel-phdlabs/CoreLib.git', :tag => s.version.to_s }
+  s.author           = { 'patteruel-dev' => 'jpteruel95@gmail.com' }
+  s.source           = { :git => 'https://github.com/patteruel-dev/LandingFeature.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '15.0'
 
-  s.source_files = 'CoreLib/Classes/**/*'
+  s.source_files = 'LandingFeature/Classes/**/*'
   
+   s.resource_bundles = {
+     'LandingFeature' => ['LandingFeature/Resources/**/*.{xib,storyboard,xcassets}']
+   }
+   
   # s.resource_bundles = {
-  #   'CoreLib' => ['CoreLib/Assets/*.png']
+  #   'LandingFeature' => ['LandingFeature/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Moya'
-  s.dependency 'ProgressHUD'
+   s.dependency 'CoreLib'
 end

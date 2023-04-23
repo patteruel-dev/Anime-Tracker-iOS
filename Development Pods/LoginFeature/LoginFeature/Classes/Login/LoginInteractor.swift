@@ -14,7 +14,8 @@ import UIKit
 
 protocol LoginBusinessLogic
 {
-    func authorize(request: Login.Authorize.Request)
+    func requestAuthorization(request: Login.Authorization.Request)
+    func handleRedirect(request: Login.Redirect.Request)
 }
 
 protocol LoginDataStore
@@ -31,9 +32,31 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     
     // MARK: Do something
     
-    func authorize(request: Login.Authorize.Request) {
-        let url = moduleData.malService.oauth2URL()
+    func requestAuthorization(request: Login.Authorization.Request) {
+        let url = moduleData.loginService.getOauth2URL()
         print("Oauth2 URL: \(url.absoluteString)")
         presenter?.presentAuthorizationWebView(response: .init(oauthURL: url))
+    }
+    
+    func handleRedirect(request: Login.Redirect.Request) {
+        guard let response = moduleData.loginService.parseUrl(request.url) else {
+            return
+        }
+        presenter?.presentHUD()
+        presenter?.dismissWebView()
+        
+        // start processing
+        Task {
+            do {
+                try await moduleData.loginService.authorizeUser(oauthResponse: response)
+                // if success, will proceed to the landing screen
+                DispatchQueue.main.async {
+                    self.moduleData.delegate.navigateToLandingScreen()
+                }
+            } catch {
+                presenter?.presentAlert(title: "Error", message: error.localizedDescription)
+            }
+            presenter?.dismissHUD()
+        }
     }
 }

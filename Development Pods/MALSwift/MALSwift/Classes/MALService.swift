@@ -7,22 +7,45 @@
 
 import Foundation
 import Moya
+import CoreLib
 
 public class MALService {
     let provider: MoyaProvider<MALAPI>
-    let clientId = "d62be5708aceb1d03e507dd24538cf91"
+    let oauthProvider: MoyaProvider<MALOauth2API>
+    
+    let clientId = "5762354fb04d5f91bdcd55bc8df0a882"
+    let clientSecret = "22310fa1c490def9f6221668fe7c5b831e42675fb853d272102221e60be41fc9"
+    
+    lazy var pkceToken: String = CryptoHelper.generatePKCEToken()
+    var session: MALSession?
     
     public init () {
-        provider = MoyaProvider<MALAPI>()
+        // initialize provider with curl logging plugin
+        let plugins = [
+            NetworkLoggerPlugin(
+                configuration: .init(
+                    logOptions: [.formatRequestAscURL, .successResponseBody, .errorResponseBody]
+                )
+            )
+        ]
+        
+        provider = MoyaProvider<MALAPI>(
+            plugins: plugins
+        )
+        
+        oauthProvider = MoyaProvider<MALOauth2API>(
+            plugins: plugins
+        )
     }
     
-    public func oauth2URL() -> URL {
-        /*
-         https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=d62be5708aceb1d03e507dd24538cf91&state=9b416493-c5b6-4aa9-943a-43222c412b2a&code_challenge=xnRXAql04G9skfkgPDdp0I9n4js8NKBAzJl9VswPryRe210nUXWi-rKHXXGp83FQmwZhbKacnpGy8ddYU3NIWqMhfR1Y
-         */
-        let pkceToken = CryptoHelper.generatePKCEToken()
-        let state = UUID().uuidString
+    public func oauth2URL(state: String) -> URL {
         let urlRaw = "https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=\(clientId)&state=\(state)&code_challenge=\(pkceToken)"
         return try! urlRaw.asURL()
+    }
+    
+    public func authorizeUser(oauthResponse: Oauth2Response) async throws {
+        let parameters = Oauth2TokenParameters(clientId: clientId, clientSecret: clientSecret, code: oauthResponse.code, codeVerifier: pkceToken, grantType: "authorization_code")
+        let token: Oauth2TokenResponse = try await oauthProvider.request(.token(parameters: parameters))
+        self.session = MALSession(token: token)
     }
 }

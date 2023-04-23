@@ -1,20 +1,25 @@
 PODS:
   - Alamofire (5.6.4)
-  - CoreLib (0.1.0)
+  - CoreLib (0.1.0):
+    - Moya
+    - ProgressHUD
+  - LandingFeature (0.1.0):
+    - CoreLib
   - LoginFeature (0.1.0):
     - LoginService
   - LoginService (0.1.0):
     - MALSwift
   - MALSwift (0.1.0):
     - CoreLib
-    - Moya
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - ProgressHUD (13.6.2)
 
 DEPENDENCIES:
   - CoreLib (from `Development Pods/CoreLib`)
+  - LandingFeature (from `Development Pods/LandingFeature`)
   - LoginFeature (from `Development Pods/LoginFeature`)
   - LoginService (from `Development Pods/LoginService`)
   - MALSwift (from `Development Pods/MALSwift`)
@@ -23,10 +28,13 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
+    - ProgressHUD
 
 EXTERNAL SOURCES:
   CoreLib:
     :path: Development Pods/CoreLib
+  LandingFeature:
+    :path: Development Pods/LandingFeature
   LoginFeature:
     :path: Development Pods/LoginFeature
   LoginService:
@@ -36,12 +44,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  CoreLib: 71abdfe73b04663a14471bb94660774ec6fddaa5
+  CoreLib: dd69187b33b0837293c7b2a4c691780314d9a5d9
+  LandingFeature: 1a31af39bf65fac7148bcc26da4cff1a3c52cdf5
   LoginFeature: e1c5b5407c27479b3ccd8af2fc27498c927b1415
   LoginService: 3dc3351b22bf5ab0f28e93807f8974c6dee33808
-  MALSwift: 0e39c302c2366fbbae9f1ebd8a0542a9f83fb2d6
+  MALSwift: 6d39d40907ed00cbb26737e2ef17e027f3d55f5a
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  ProgressHUD: 355915c8f033e626788fa9b0d99d06e8691595ab
 
-PODFILE CHECKSUM: d4d79a6b2b2e68ecd1b0033b8beddf8d42994c9c
+PODFILE CHECKSUM: 5a8cd6ac94c25c7ccba71c3130f2d8b2ae092740
 
 COCOAPODS: 1.11.3
