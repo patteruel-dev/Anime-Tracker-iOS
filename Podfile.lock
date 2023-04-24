@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.6.4)
   - AniListKtModule (1.0)
   - CoreLib (0.1.0):
+    - AniListKtModule
     - Moya
     - ProgressHUD
     - SDWebImage
@@ -11,18 +12,17 @@ PODS:
   - LoginFeature (0.1.0):
     - LoginService
   - LoginService (0.1.0):
-    - AniListKtModule
     - CoreLib
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - ProgressHUD (13.6.2)
-  - SDWebImage (5.15.5):
-    - SDWebImage/Core (= 5.15.5)
-  - SDWebImage/Core (5.15.5)
+  - SDWebImage (5.15.6):
+    - SDWebImage/Core (= 5.15.6)
+  - SDWebImage/Core (5.15.6)
   - UserService (0.1.0):
-    - AniListKtModule
+    - CoreLib
 
 DEPENDENCIES:
   - AniListKtModule (from `KtLibraries/AniListKt/AniListKtModule`)
@@ -56,14 +56,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   AniListKtModule: 1f8da1ceafbf457898f02a062f7556923a0c69cc
-  CoreLib: 35c3823782b517b85c18e1d4cf221838b3b5b2f4
+  CoreLib: 710dd1f0ec3d68dfd5d64e3f156686034585e8e0
   LandingFeature: 03334b57a7e35ab6b1bdf7222542adcfee045c62
   LoginFeature: e1c5b5407c27479b3ccd8af2fc27498c927b1415
-  LoginService: 6ae797e78e87f5d91c5a4bf754aae565b56f4315
+  LoginService: 5c1b4ac070ade4a49da70606a6ea63302a526ff9
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   ProgressHUD: 355915c8f033e626788fa9b0d99d06e8691595ab
-  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
-  UserService: 2809f37b9774827e8e673b489f921e52dc436453
+  SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
+  UserService: 83693ee0818dc0a5c6d8b7d163a85ae79114423a
 
 PODFILE CHECKSUM: 384f660d42e54d38eba2c5541e05fe38acd32d66
 

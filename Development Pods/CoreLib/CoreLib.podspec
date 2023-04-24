@@ -41,4 +41,5 @@ TODO: Add long description of the pod here.
   s.dependency 'Moya'
   s.dependency 'ProgressHUD'
   s.dependency 'SDWebImage'
+  s.dependency 'AniListKtModule'
 end
