@@ -9,8 +9,9 @@ target 'Anime Tracker' do
   pod 'CoreLib', :path => 'Development Pods/CoreLib'
   pod 'LoginFeature', :path => 'Development Pods/LoginFeature'
   pod 'LoginService', :path => 'Development Pods/LoginService'
-  pod 'AniListSwift', :path => 'Development Pods/AniListSwift'
   pod 'LandingFeature', :path => 'Development Pods/LandingFeature'
+  pod 'UserService', :path => 'Development Pods/UserService'
+  pod 'AniListKtModule', :path => 'KtLibraries/AniListKt/AniListKtModule'
   
   target 'Anime TrackerTests' do
     inherit! :search_paths

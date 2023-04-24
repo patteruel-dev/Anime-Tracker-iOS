@@ -34,29 +34,19 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     
     func requestAuthorization(request: Login.Authorization.Request) {
         let url = moduleData.loginService.getOauth2URL()
-        print("Oauth2 URL: \(url.absoluteString)")
         presenter?.presentAuthorizationWebView(response: .init(oauthURL: url))
     }
     
     func handleRedirect(request: Login.Redirect.Request) {
-        guard let response = moduleData.loginService.parseUrl(request.url) else {
+        guard let token = moduleData.loginService.parseToken(from: request.url) else {
             return
         }
-        presenter?.presentHUD()
         presenter?.dismissWebView()
         
         // start processing
-        Task {
-            do {
-                try await moduleData.loginService.authorizeUser(oauthResponse: response)
-                // if success, will proceed to the landing screen
-                DispatchQueue.main.async {
-                    self.moduleData.delegate.navigateToLandingScreen()
-                }
-            } catch {
-                presenter?.presentAlert(title: "Error", message: error.localizedDescription)
-            }
-            presenter?.dismissHUD()
-        }
+        moduleData.loginService.authorizeUser(token: token)
+        
+        // if success, will proceed to the landing screen
+        self.moduleData.delegate.navigateToLandingScreen()
     }
 }

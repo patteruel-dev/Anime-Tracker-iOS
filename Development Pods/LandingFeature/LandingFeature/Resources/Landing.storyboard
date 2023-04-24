@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="LandingFeature" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,14 +23,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eMg-kS-VEY">
+                                <rect key="frame" x="323" y="80" width="50" height="48.666666666666686"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eMg-kS-VEY" secondAttribute="height" multiplier="1:1" id="KMO-pS-BZM"/>
+                                    <constraint firstAttribute="width" constant="50" id="mxh-u8-3xe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1P2-fM-UDi" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Hdl-dV-sEY"/>
                             <constraint firstItem="1P2-fM-UDi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WpV-q8-qUM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eMg-kS-VEY" secondAttribute="trailing" constant="20" id="hfb-P4-kA8"/>
+                            <constraint firstItem="eMg-kS-VEY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="lyl-kc-EQT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userImageView" destination="eMg-kS-VEY" id="dGz-99-gDI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,6 +51,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

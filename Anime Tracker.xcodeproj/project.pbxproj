@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4391E5BA29F666BD00C80973 /* LandingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4391E5B929F666BD00C80973 /* LandingCoordinator.swift */; };
 		4394654F29F33BFE00A3432D /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4394654E29F33BFE00A3432D /* LoginCoordinator.swift */; };
 		43A9EEA129EFFF9300C5733F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA029EFFF9300C5733F /* AppDelegate.swift */; };
 		43A9EEA329EFFF9300C5733F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A9EEA229EFFF9300C5733F /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 		076381D522C97E5996B5A3D5 /* Pods-Anime TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-Anime TrackerTests/Pods-Anime TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A071DE83881D8112819BB03 /* Pods-Anime Tracker-Anime TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Anime Tracker-Anime TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Anime Tracker-Anime TrackerUITests/Pods-Anime Tracker-Anime TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A3B0DBC8C8475665714A4C5 /* Pods_Anime_Tracker_Anime_TrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Anime_Tracker_Anime_TrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4391E5B929F666BD00C80973 /* LandingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingCoordinator.swift; sourceTree = "<group>"; };
 		4394654E29F33BFE00A3432D /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		43A9EE9D29EFFF9300C5733F /* Anime Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Anime Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A9EEA029EFFF9300C5733F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				43FE307429F008D20026A5ED /* AppCoordinator.swift */,
 				4394654E29F33BFE00A3432D /* LoginCoordinator.swift */,
+				4391E5B929F666BD00C80973 /* LandingCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4391E5BA29F666BD00C80973 /* LandingCoordinator.swift in Sources */,
 				43FE307529F008D20026A5ED /* AppCoordinator.swift in Sources */,
 				43A9EEA529EFFF9300C5733F /* ViewController.swift in Sources */,
 				4394654F29F33BFE00A3432D /* LoginCoordinator.swift in Sources */,

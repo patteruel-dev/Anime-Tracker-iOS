@@ -1,0 +1,37 @@
+query UserMediaList($userId: Int!) {
+    Page {
+        ... MediaPage
+    }
+}
+
+fragment MediaPage on Page {
+    pageInfo {
+        hasNextPage
+    }
+    mediaList(userId: $userId, status: CURRENT) {
+        id,
+        userId,
+        media {
+            title {
+                romaji
+                english
+                native
+            }
+            id
+        }
+    }
+}
+
+query CurrentUser {
+    Viewer {
+        ... UserInfo
+    }
+}
+
+fragment UserInfo on User {
+    id
+    name
+    avatar {
+        medium
+    }
+}
