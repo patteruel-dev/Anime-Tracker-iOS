@@ -73,6 +73,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     {
         super.viewDidLoad()
         
+        interactor?.restoreSession()
     }
     
     @IBAction func didTapAuthorizeButton(_ sender: UIButton) {

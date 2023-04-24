@@ -14,6 +14,7 @@ import UIKit
 
 protocol LoginBusinessLogic
 {
+    func restoreSession()
     func requestAuthorization(request: Login.Authorization.Request)
     func handleRedirect(request: Login.Redirect.Request)
 }
@@ -32,6 +33,13 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     
     // MARK: Do something
     
+    func restoreSession() {
+        guard moduleData.loginService.reauthorizeUser() else {
+            return
+        }
+        // if success, will proceed to the landing screen
+        self.moduleData.delegate.navigateToLandingScreen()
+    }
     func requestAuthorization(request: Login.Authorization.Request) {
         let url = moduleData.loginService.getOauth2URL()
         presenter?.presentAuthorizationWebView(response: .init(oauthURL: url))

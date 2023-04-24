@@ -3,6 +3,7 @@ package com.pat.anilistkt
 import com.apollographql.apollo3.ApolloClient
 import com.pat.anilistkt.fragment.MediaPage
 import com.pat.anilistkt.fragment.UserInfo
+import kotlinx.serialization.json.Json
 
 class AniListService(
     val clientId: String,
@@ -14,6 +15,13 @@ class AniListService(
         get() = session ?: throw IllegalStateException("Session not initialized")
     private val client: ApolloClient
         get() = currentSession.client
+
+    private val json = Json {
+        ignoreUnknownKeys = true
+    }
+
+    private val platform = Platform()
+    private val settings = platform.getSettings()
 
     fun oauth2URL(): String {
         return "https://anilist.co/api/v2/oauth/authorize?response_type=token&client_id=$clientId"
@@ -33,7 +41,13 @@ class AniListService(
     }
 
     fun authorizeUser(token: OAuthToken) {
-        this.session = AniListSession(token = token)
+        this.session = AniListSession(token = token, json = json, settings = settings)
+        this.session?.saveSession()
+    }
+
+    fun reauthorizeUser(): Boolean {
+        this.session = AniListSession.loadSession(json = json, settings = settings)
+        return this.session != null
     }
 
     @Throws(Throwable::class)

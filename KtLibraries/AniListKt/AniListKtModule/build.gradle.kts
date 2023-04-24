@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("com.apollographql.apollo3") version "3.7.3"
+    kotlin("plugin.serialization") version "1.8.10"
 }
 
 kotlin {
@@ -33,6 +34,8 @@ kotlin {
                 implementation("com.apollographql.apollo3:apollo-runtime:3.7.3")
                 api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 api("co.touchlab:kermit:1.2.2")
+                api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+                implementation("com.russhwolf:multiplatform-settings:1.0.0")
             }
         }
         val commonTest by getting {

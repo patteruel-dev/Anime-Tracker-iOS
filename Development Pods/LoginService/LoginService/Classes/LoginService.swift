@@ -30,4 +30,8 @@ public class LoginService {
     public func authorizeUser(token: OAuthToken) {
         anilistService.authorizeUser(token: token)
     }
+    
+    public func reauthorizeUser() -> Bool {
+        anilistService.reauthorizeUser()
+    }
 }

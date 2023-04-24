@@ -1,5 +1,6 @@
 package com.pat.anilistkt
 
+@kotlinx.serialization.Serializable
 data class OAuthToken(
     val tokenType: String,
     val expiresIn: Int,
