@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("com.apollographql.apollo3") version "3.7.3"
 }
 
 kotlin {
@@ -25,9 +26,15 @@ kotlin {
             baseName = "AniListKtModule"
         }
     }
-    
+
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("com.apollographql.apollo3:apollo-runtime:3.7.3")
+                api("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                api("co.touchlab:kermit:1.2.2")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
@@ -62,5 +69,21 @@ android {
     defaultConfig {
         minSdk = 29
         targetSdk = 33
+    }
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.pat.anilistkt")
+    }
+}
+
+ktlint {
+    enableExperimentalRules.set(true)
+    filter {
+        exclude {
+            val path = projectDir.toURI().relativize(it.file.toURI()).path
+            path.contains("/generated/")
+        }
     }
 }

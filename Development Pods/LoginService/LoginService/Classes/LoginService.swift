@@ -14,7 +14,6 @@ public class LoginService {
     
     public init (anilistService: AniListService) {
         self.anilistService = anilistService
-        print("Greetings: \(Greeting().greet())")
     }
     
     public func getOauth2URL() -> URL {
@@ -28,7 +27,7 @@ public class LoginService {
         return anilistService.parseToken(url: url.absoluteString)
     }
     
-    public func authorizeUser(token: OAuthToken) async throws {
-        try await anilistService.authorizeUser(token: token)
+    public func authorizeUser(token: OAuthToken) {
+        anilistService.authorizeUser(token: token)
     }
 }

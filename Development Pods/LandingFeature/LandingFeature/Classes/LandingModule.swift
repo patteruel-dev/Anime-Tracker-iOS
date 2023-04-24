@@ -7,20 +7,26 @@
 
 import Foundation
 import CoreLib
+import UserService
 
 public protocol LandingFlowDelegate {
 }
 
 public class LandingModule {
-    public init() {
+    var moduleData: LandingModuleData
+    
+    public init(delegate: LandingFlowDelegate, userService: UserService) {
+        self.moduleData = LandingModuleData(delegate: delegate, userService: userService)
     }
     
     private let resourceBundle: Bundle = Bundle.resourceBundle(for: LandingModule.self, resource: "LandingFeature")
     
     private func makeLandingViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Landing", bundle: resourceBundle)
-        let landingViewController = storyboard.instantiateInitialViewController()!
-        return landingViewController
+        let homeViewController = storyboard.instantiateInitialViewController() as! HomeViewController
+        var homeDS = homeViewController.router?.dataStore
+        homeDS?.moduleData = moduleData
+        return homeViewController
     }
     
     public func startLandingFlow(in navigationController: UINavigationController) {
@@ -29,3 +35,7 @@ public class LandingModule {
     }
 }
 
+struct LandingModuleData {
+    let delegate: LandingFlowDelegate
+    let userService: UserService
+}

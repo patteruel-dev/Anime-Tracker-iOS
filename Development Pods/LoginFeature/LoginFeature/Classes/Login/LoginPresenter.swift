@@ -32,18 +32,26 @@ class LoginPresenter: LoginPresentationLogic
     }
     
     func dismissWebView() {
-        viewController?.dismissWebView()
+        DispatchQueue.main.async {
+            self.viewController?.dismissWebView()
+        }
     }
     
     func presentAlert(title: String, message: String, buttonTitle: String) {
-        viewController?.displayAlert(title: title, message: message, actionTitle: buttonTitle)
+        DispatchQueue.main.async {
+            self.viewController?.displayAlert(title: title, message: message, actionTitle: buttonTitle)
+        }
     }
     
     func presentHUD() {
-        viewController?.displayHUD()
+        DispatchQueue.main.async {
+            self.viewController?.displayHUD()
+        }
     }
     
     func dismissHUD() {
-        viewController?.dismissHUD()
+        DispatchQueue.main.async {
+            self.viewController?.dismissHUD()
+        }
     }
 }
