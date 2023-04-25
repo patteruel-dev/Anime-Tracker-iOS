@@ -18,7 +18,7 @@ internal class AniListSession(
         .httpMethod(HttpMethod.Post)
         .httpHeaders(
             listOf(
-                HttpHeader("Authorization", token.getAuthorizationHeader())
+                HttpHeader("Authorization", token.fetchAuthorizationHeader())
             )
         )
         .build()

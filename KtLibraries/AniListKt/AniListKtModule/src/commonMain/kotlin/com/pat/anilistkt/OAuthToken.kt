@@ -6,7 +6,7 @@ data class OAuthToken(
     val expiresIn: Int,
     val accessToken: String
 ) {
-    fun getAuthorizationHeader(): String {
+    fun fetchAuthorizationHeader(): String {
         return "$tokenType $accessToken"
     }
 }
